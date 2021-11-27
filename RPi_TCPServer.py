@@ -63,45 +63,63 @@ class serverTcpThread_callback(object):
 # this is the code to be executed when a message is received
     def processRecvMsg(self, serverTcpThread, msg):
         print ("From '" + serverTcpThread.client + "': Received [" + msg + "]")
+        tempMsg = msg # for temp storage
         cmdParams = msg.split(":")
         if len(cmdParams) < 2 or (cmdParams[0].upper() != "OUT" and cmdParams[0].upper() != "IN"): # generic error
             msg = "ERROR"
             serverTcpThread.send(msg)
             return
         inout = cmdParams[0].upper()
-        try:
-            pin = int(cmdParams[1])
-        except: # invalid GPIO
-            pin = 9999
+
         if inout == "OUT":
-            if len(cmdParams) != 3: # error for OUT command
+            servoAdd = None
+            thrownAngle = None # The angle of the servo for THROWN position
+            closedAngle = None # The angle of the sero for CLOSED position
+            active = None
+
+            if len(cmdParams) != 2: # error for OUT command
+                msg = inout + ":" + str(tempMsg) + ":ERROR - Not enough parameters for servo control"
+                serverTcpThread.send(msg)
+                return
+            
+            re_str = "([0-9]+)\[([0-9]+)\]\[([0-9]+)\]:([0-1]+)" # sreach string to break down the turnout systemname
+            grps = re.search (re_str, tempMsg)
+
+            try:
+                servoAdd = int(grps.groups()[0])
+                thrownAngle = int(grps.groups()[1])
+                closedAngle = int(grps.groups()[2]) 
+                active = (True if int(grps.groups()[3]) is 1 else False)
+            except:
+                msg = inout + ":" + str(tempMsg) + ":ERROR - could not parse parameters for servo control"
+                serverTcpThread.send(msg)
+                return
+
+            if servoAdd not in servoTURNOUT:
+                try:
+                    kit = ServoKit(channels=16)
+                except:
+                    msg = inout + ":" + str(tempMsg) + ":ERROR - could not initiate servo controller"
+                    serverTcpThread.send(msg)
+                    return     
+                else:
+                    servoTURNOUT[servoAdd] = kit
+
+            if active:
+                servoTURNOUT[servoAdd].servo[servoAdd].angle = closedAngle
+                print ("Servo " + str(servoAdd) + " set to CLOSED")
+            else:
+                servoTURNOUT[servoAdd].servo[servoAdd].angle = thrownAngle
+                print ("Servo " + str(servoAdd) + " set to THROWN")
+
+        if inout == "IN":
+            try:
+                pin = int(cmdParams[1])
+            except: # invalid GPIO
+                pin = 9999
                 msg = inout + ":" + str(pin) + ":ERROR"
                 serverTcpThread.send(msg)
                 return
-            if pin not in gpioOUT: # try to configure GPIO as output and add it to the list
-                if pin in gpioIN: # already defined for input
-                    gpioIN[pin].close() # close it and free resources
-                    del gpioIN[pin] # remove it
-                try:
-                    gpioAux = gpiozero.LED(pin)
-                except:
-                    msg = inout + ":" + str(pin) + ":ERROR"
-                    serverTcpThread.send(msg)
-                    return
-                else:
-                    gpioOUT[pin] = gpioAux
-                print ("GPIO " + str(pin) + " set to output")
-            try:
-                status = int(cmdParams[2])
-            except: # invalid status
-                status = 0
-            if status == 0:
-                gpioOUT[pin].off()
-                print ("GPIO " + str(pin) + " OUT set to 0")
-            else:
-                gpioOUT[pin].on()
-                print ("GPIO " + str(pin) + " OUT set to 1")
-        if inout == "IN":
             if len(cmdParams) != 2: # error for IN command
                 msg = inout + ":" + str(pin) + ":ERROR"
                 serverTcpThread.send(msg)
@@ -112,10 +130,6 @@ class serverTcpThread_callback(object):
                     del gpioOUT[pin] # remove it
                 try:
                     gpioAux = gpiozero.Button(pin, True) # pullup resistor
-# to apply different settings for input pins, add code here ...
-# example (no pullup resistor for pin 3 input):
-#                   if pin == 3:
-#                       gpioAux = gpiozero.Button(pin, False)
                 except:
                     msg = inout + ":" + str(pin) + ":ERROR"
                     serverTcpThread.send(msg.encode())

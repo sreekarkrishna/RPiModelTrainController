@@ -10,12 +10,12 @@
 #
 # JMRI Turnouts and Sensors name definition (always defined as internal):
 #
-# Internal Turnouts (system name):      [IT].IOT$<gpio>:<id>    (GPIO outputs: THROWN - set output to ground / CLOSED - set output to +V)
-# Internal Sensors (system name):       [IS].IOT$<gpio>:<id>    (GPIO inputs: INACTIVE - input is at +V / ACTIVE - input is connected to ground)
+# Internal Turnouts (system name):      [IT].RPi$<serveraddress>[thrown angle][closed angle]:<id>    (GPIO outputs: THROWN - set output to minimum angle / CLOSED - set output to max angle)
+# Internal Sensors (system name):       [IS].RPi$<gpio>:<id>    (GPIO inputs: INACTIVE - input is at +V / ACTIVE - input is connected to ground)
 # Examples:
-# IT.IOT$5:192.168.200 - GPIO 5 as output on device with IP address 192.168.200 listening at port 10000 (default port)
-# IS.IOT$13:dev1.mylayout.com - GPIO 13 as input on device with server name 'dev1.mylayout.com' listening at port 10000 (default port)
-# IS.IOT$5:192.168.201:12345 - GPIO 5 as input on device with IP address 192.168.201 listening at port 12345
+# IT.RPi$5:192.168.200 - GPIO 5 as output on device with IP address 192.168.200 listening at port 10000 (default port)
+# IS.RPi$13:dev1.mylayout.com - GPIO 13 as input on device with server name 'dev1.mylayout.com' listening at port 10000 (default port)
+# IS.RPi$5:192.168.201:12345 - GPIO 5 as input on device with IP address 192.168.201 listening at port 12345
 #
 # JMRI should manage Sensors debounce delays
 #
@@ -26,13 +26,25 @@
 # dummyTcpPeripheral.py - runs on python 2.7 (no JMRI needed) to simulate a networked device (stationary decoder)
 # testTcpPeripheral.py - runs on python 2.7 (no JMRI needed) to simulate JMRI running JMRI_TcpPeripheral.py (this script)
 #
-# For aditional information look at the following files and links:
-# (it is important to have some electronic knowledge to get the most of GPIO interfaces - LEDs, buttons, relays, reed switches, ...)
-# - dummyTcpPeripheral.py
-# - testTcpPeripheral.py
-# - JMRI_TcpPeripheral.py (this script)
-# - RPi_TcpPeripheral.py (to run at startup on raspberry pi)
-# - ESP8266_TcpPeripheral.ino (to upload to NodeMCU 1.0 8266 ESP-12E using arduino IDE)
+# - dummy_RPi.py
+# - dummy_JMRI.py
+# - JMRI_script.py
+# - RPi_TCPServer.py
+
+# This is important to get the most of this solution.
+
+# ----------------------------------------------------------------------------------
+
+# For testing purposes, you may use the following scripts:
+# dummy_RPi.py - runs on python 2.7 (no JMRI needed) to simulate a networked device (stationary decoder)
+# dummy_JMRI.py - runs on python 2.7 (no JMRI needed) to simulate JMRI running JMRI_TcpPeripheral.py (the JMRI computer)
+
+# This is the script to load at JMRI startup:
+# JMRI_script.py
+
+# This is the script to run at startup on Raspberry Pis:
+# RPi_TCPServer.py
+
 # https://www.raspberrypi.org/
 # https://gpiozero.readthedocs.io/
 # https://www.gitbook.com/book/smartarduino/user-manual-for-esp-12e-devkit/details
@@ -59,6 +71,7 @@ import threading
 import time
 from org.apache.log4j import Logger
 import jmri
+import re
 
 TcpPeripheral_log = Logger.getLogger("jmri.jmrit.jython.exec.TcpPeripheral")
 
@@ -67,7 +80,7 @@ MAX_HEARTBEAT_FAIL = 5 # multiply by CONN_TIMEOUT for maximum time interval (sen
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # get gpio and id from turnout or sensor system name
-def TcpPeripheral_getGpioId(sysName):
+def TcpPeripheral_getSensorGpioId(sysName):
     gpio = None
     id = None
     _sysName = sysName.split(":")
@@ -80,6 +93,29 @@ def TcpPeripheral_getGpioId(sysName):
                 gpio = 9999
             id = _sysName[1].strip() + ((":" + _sysName[2].strip()) if len(_sysName) > 2 else "")
     return gpio, id
+
+    #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# get gpio and id from turnout or sensor system name
+def TcpPeripheral_getTurnoutInfo(sysName):
+    servoAdd = None
+    id = None
+    thrownAngle = None # The angle of the servo for THROWN position
+    closedAngle = None # The angle of the sero for CLOSED position
+    port = 10000
+
+    re_str = "([A-Za-z.]+\$([0-9]+)\[([0-9]+)\]\[([0-9]+)\]:([A-Z0-9.]+):*([0-9]*))" # sreach string to break down the turnout systemname
+    grps = re.search (re_str, sysName)
+    
+    if(len(grps.groups()) == 6):
+        servoAdd = int(grps.groups()[1])
+        thrownAngle = int(grps.groups()[2])
+        closedAngle = int(grps.groups()[3])
+        id = grps.groups()[4]
+        if (grps.groups()[5] is not None):
+            port = grps.groups()[5]
+            id = id + ":" + port
+
+    return servoAdd, thrownAngle, closedAngle, id
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # this is the code to be executed for a new network device
@@ -110,20 +146,25 @@ def TcpPeripheral_removeDevice(id):
     return
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# this is the code to be executed to send a message to a network device
-def TcpPeripheral_sendToDevice(out, gpio, active, id):
+# this is the code to be executed to send a message to a network device connected to the sensor
+def TcpPeripheral_sendToSensor(gpio, id):
     alias = id.lower()
-    if out:
-        msg = "OUT:" + str(gpio) + ":" + ("1" if active else "0")
-    else:
-        msg = "IN:" + str(gpio)
+    msg = "IN:" + str(gpio)
+    sent = TcpPeripheral_sockets[alias].send(msg)
+    return sent
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# this is the code to be executed to send a message to a network device connected to the sensor
+def TcpPeripheral_sendToTurnout(sensorAdd, thrownAngle, closedAngle, id, active):
+    alias = id.lower()
+    msg = "OUT:" + str(sensorAdd) + "[" + str(thrownAngle) + "][" + str(closedAngle) +  "]:" + ("1" if active else "0")
     sent = TcpPeripheral_sockets[alias].send(msg)
     return sent
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # this is the code to be executed when a valid sensor status is received from a network device
 def TcpPeripheral_receivedFromDevice(alias, gpio, value):
-    sensorSysName = "IS.IOT$" + str(gpio) + ":" + alias.upper()
+    sensorSysName = "IS.RPi$" + str(gpio) + ":" + alias.upper()
     sensor = sensors.getBySystemName(sensorSysName)
     if sensor != None: # sensor exists
         if value:
@@ -285,8 +326,8 @@ class TcpPeripheral_Sensor_Listener(java.beans.PropertyChangeListener):
         sensorName = sensor.getDisplayName(jmri.NamedBean.DisplayOptions.USERNAME_SYSTEMNAME)
         TcpPeripheral_log.debug("'TcpPeripheral' - Sensor=" + sensorName + " property=" + event.propertyName + "]: oldValue=" + str(event.oldValue) + " newValue=" + str(event.newValue))
         if event.propertyName == "KnownState": # only this property matters
-            gpio, id = TcpPeripheral_getGpioId(sensor.getSystemName())
-            sent = TcpPeripheral_sendToDevice(False, gpio, None, id)
+            gpio, id = TcpPeripheral_getSensorGpioId(sensor.getSystemName())
+            sent = TcpPeripheral_sendToSensor(gpio, id)
             if not sent: # set as unknown
                 sensor.setKnownState(jmri.Sensor.UNKNOWN)
         return
@@ -308,12 +349,12 @@ class TcpPeripheral_Turnout_Listener(java.beans.PropertyChangeListener):
         TcpPeripheral_log.debug("'TcpPeripheral' - Turnout=" + turnoutName + " property=" + event.propertyName + "]: oldValue=" + str(event.oldValue) + " newValue=" + str(event.newValue) + " turnoutCtrl=" + str(self.turnoutCtrl))
         if event.propertyName == "CommandedState": # only this property matters
             if event.newValue != self.turnoutCtrl: # this is a state change request
-                gpio, id = TcpPeripheral_getGpioId(turnout.getSystemName())
+                sensorAdd, thrownAngle, closedAngle, id = TcpPeripheral_getTurnoutInfo(turnout.getSystemName())
                 sent = True
                 if event.newValue == jmri.Turnout.CLOSED:
-                    sent = TcpPeripheral_sendToDevice(True, gpio, True, id)
+                    sent = TcpPeripheral_sendToTurnout(sensorAdd, thrownAngle, closedAngle, id, True)
                 if event.newValue == jmri.Turnout.THROWN:
-                    sent = TcpPeripheral_sendToDevice(True, gpio, False, id)
+                    sent = TcpPeripheral_sendToTurnout(sensorAdd, thrownAngle, closedAngle, id, False)
                 if sent: # store the current state
                     self.turnoutCtrl = event.newValue
                 else: # restore turnout state
@@ -346,18 +387,20 @@ else: # Continue running script
     TcpPeripheral_running = True
     TcpPeripheral_sockets = {}
     shutdown.register(TcpPeripheral_ShutDown("TcpPeripheral"))
+
     for sensor in sensors.getNamedBeanSet():
-        gpio, id = TcpPeripheral_getGpioId(sensor.getSystemName())
+        gpio, id = TcpPeripheral_getSensorGpioId(sensor.getSystemName())
         TcpPeripheral_log.debug("'TcpPeripheral' - Sensor SystemName [" + sensor.getSystemName() + "] GPIO [" + str(gpio) + "] ID [" + str(id) + "]")
         if gpio != None and id != None:
             TcpPeripheral_addDevice(id)
             sensor.setKnownState(jmri.Sensor.INCONSISTENT) # set sensor to inconsistent state (just to detect change to unknown)
             sensor.addPropertyChangeListener(TcpPeripheral_Sensor_Listener())
             sensor.setKnownState(jmri.Turnout.UNKNOWN) # to force send a register request to device
+
     for turnout in turnouts.getNamedBeanSet():
-        gpio, id = TcpPeripheral_getGpioId(turnout.getSystemName())
-        TcpPeripheral_log.debug("'TcpPeripheral' - Turnout SystemName [" + turnout.getSystemName() + "] GPIO [" + str(gpio) + "] ID [" + str(id) + "] Kown State [" + str(turnout.getKnownState()) + "]")
-        if gpio != None and id != None: # should be a valid network device and GPIO
+        servoAdd, thrownAngle, closedAngle, id = TcpPeripheral_getTurnoutInfo(turnout.getSystemName())
+        TcpPeripheral_log.debug("'TcpPeripheral' - Turnout SystemName [" + turnout.getSystemName() + "] Servo [" + str(servoAdd) + "] ID [" + str(id) + "] Kown State [" + str(turnout.getKnownState()) + "]")
+        if servoAdd != None and id != None: # should be a valid network device and GPIO
             TcpPeripheral_addDevice(id)
             currentState = turnout.getCommandedState() # get current turnout state
             turnout.setCommandedState(jmri.Turnout.UNKNOWN) # set turnout to a state that will permit change detection by listener
