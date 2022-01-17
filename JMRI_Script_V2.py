@@ -1,51 +1,53 @@
 ##################################################################################
+# This script is part of a package that works together to allow Raspberry Pi to control servos (for turnouts), LEDs (for signals)
+# and Obstacle Avoidance sensors (to sense the end of the track)
+# Start with this script and then read "RPi_TCPServer.py"
 #
-# Script that controls GPIO change/status on networked devices using TCP/IP sockets.
+# This script assumes the Raspberry Pi is running a TCP server and controls turnouts, sensors and signal heads using its GPIO
+# Script that controls GPIO change/status on networked devices using TCP/IP sockets
 # The goal is to use cheap versatile computers as stationary decoders (independent of railway network - DCC, loconet, NCE, Lenz, ...).
-# This script communication was tested with:
-# - raspberry pi 2, zero and 3 (wifi)
-# - NodeMCU 1.0 8266 ESP-12E (wifi)
+# The turnouts assume that they are being controlled through Raspberry Pi I2C bus using PCM9685 servo control board
+# The Signal Heads are controlled via Raspberry Pi I2C bus using MCP23017 GPIO control board
+# The Obstacle Avoidance are controlled via Raspberry Pi's GPIO pins 
+# 
+# USAGE:
+# This script is run on JMRI using (Panel Pro's Scripting --> Run Script), and it communicates with a Raspberry Pi via TCP sockets
+#  OR, This script should be loaded at JMRI startup (preferred), and the script should run after JMRI has loaded the Tables with the appropriate System and User names for the turnouts, sensors and signal heads
 #
-# Networked devices will try to reconnect when connection is lost.
+#  This script runs on JPython interpretter that ships as part of JMRI. The accompanying code running on Raspberry Pi runs on CPython typically.
 #
-# JMRI Turnouts and Sensors name definition (always defined as internal):
+# This script sends commands to Raspberry Pi, which are shortend version of the command received from the various JMRI objects.
+# This script taps into the JMRI Java listeners which allow us to modify the functionality of what happens when changes are made on JMRI 
+# like operate a turnout, apply apperance change to signals etc.
+# The commands sent to Raspberry Pi act as the translation from JMRI layout commands to raspberry pi connected sensors and actuators
 #
-# Internal Turnouts (system name):      [IT].RPi$<servoaddress>[thrown angle][closed angle]:<host>:<port>    (GPIO outputs: THROWN - set output to minimum angle / CLOSED - set output to max angle)
-# Example: IT.RPi$0[85][95]:Pi3BModelTrain:142000
-# Internal Sensors (system name):       [IS].RPi$<gpio>:<host>:<port>    (GPIO inputs: INACTIVE - input is at +V / ACTIVE - input is connected to ground)
-# Examples:
-# IT.RPi$5:192.168.200 - GPIO 5 as output on device with IP address 192.168.200 listening at port 10000 (default port)
-# IS.RPi$13:dev1.mylayout.com - GPIO 13 as input on device with server name 'dev1.mylayout.com' listening at port 10000 (default port)
-# IS.RPi$5:192.168.201:12345 - GPIO 5 as input on device with IP address 192.168.201 listening at port 12345
+# IMPORTANT:
+# 1. This script acts as a TCP client, and will require the companion Raspberry Pi script which acts as the TCP server.
+# 2. Networked devices will try to reconnect when connection is lost.
 #
-# JMRI should manage Sensors debounce delays
+# JMRI Turnouts, Sensors and Signal Heads are configured in JMRI Panel Pro as "Internal" and have to follow specific pattern as shown below
 #
-# This script should be loaded at JMRI startup (preferences).
-# After adding or removing these Turnouts and Sensors this script (and JMRI) must be reloaded - before restarting, remember to save the panel.
+# TURNOUT EXAMPLE:
+# Internal Turnouts (system name):      [IT].RPI$<servoaddress>[thrown angle][closed angle]:<host>:<port>    (GPIO outputs: THROWN - set output to minimum angle / CLOSED - set output to max angle)
+# Example: IT.RPI$0[85][95]:PI3BMODELTRAIN:142000 - This assumes that the servo being controlled is connected to the first servo control port of the PCM9685 board
+# 
+# SENSOR EXAMPLE: (JMRI should manage Sensor debouce delay)
+# Internal Sensors (system name):       [IS].RPI$<gpio>:<host>:<port>    (GPIO inputs: INACTIVE - input is at +V / ACTIVE - input is connected to ground)
+# Examples: IS.RPI$0:PI3BMODELTRAIN:14200
+# 
+# SIGNAL HEAD EXAMPLE:
+# Internal SignalHead (user name):      [IH].RPI$<Signal Mast Num>-<Signal Head num>$<MCP23017 board I2C Add>$<Red LED GPIO>$<Green LED GPIO>:<Host>:<Port>
+# Example: IH.RPI$SM1-SH1$0x24$R6$G14:PI3BMODELTRAIN:14200
+# 
+# Other examples:
+# 
+# 
 #
-# For testing purposes, you may use the following scripts:
-# dummyTcpPeripheral.py - runs on python 2.7 (no JMRI needed) to simulate a networked device (stationary decoder)
-# testTcpPeripheral.py - runs on python 2.7 (no JMRI needed) to simulate JMRI running JMRI_TcpPeripheral.py (this script)
+# For testing purposes, there are two scripts available:
+# - dummy_RPi.py - Pretends like a dummy Raspberry Pi and can be used to test the JMRI script running properly within JMRI
+# - dummy_JMRI.py - Pretends like a JMRI and can be used to send commands to the Rasapberry Pi
 #
-# - dummy_RPi.py
-# - dummy_JMRI.py
-# - JMRI_script.py
-# - RPi_TCPServer.py
-
-# This is important to get the most of this solution.
-
-# ----------------------------------------------------------------------------------
-
-# For testing purposes, you may use the following scripts:
-# dummy_RPi.py - runs on python 2.7 (no JMRI needed) to simulate a networked device (stationary decoder)
-# dummy_JMRI.py - runs on python 2.7 (no JMRI needed) to simulate JMRI running JMRI_TcpPeripheral.py (the JMRI computer)
-
-# This is the script to load at JMRI startup:
-# JMRI_script.py
-
-# This is the script to run at startup on Raspberry Pis:
-# RPi_TCPServer.py
-
+#
 # https://www.raspberrypi.org/
 # https://gpiozero.readthedocs.io/
 # https://www.gitbook.com/book/smartarduino/user-manual-for-esp-12e-devkit/details
@@ -95,7 +97,7 @@ def TcpPeripheral_getSensorGpioId(sysName):
             id = _sysName[1].strip() + ((":" + _sysName[2].strip()) if len(_sysName) > 2 else "")
     return gpio, id
 
-    #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # get gpio and id from turnout or sensor system name
 def TcpPeripheral_getTurnoutInfo(sysName):
     servoAdd = None
@@ -118,6 +120,30 @@ def TcpPeripheral_getTurnoutInfo(sysName):
             id = id + ":" + port
 
     return servoAdd, thrownAngle, closedAngle, id
+
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# get Signal Head info string and host name for the signal control Raspberry Pi
+def TcpPeripheral_getSignalHeadInfo(sysName):
+    signalHeadCmdStr = ""
+    host = None
+    port = 10000
+
+    # Pattern to parse IH.RPI$SM1-SH1$0x24$R6$G14:PI3BMODELTRAIN:14200
+    re_str = "(IH.RPI\$([A-Z0-9\-\$x]+):([A-Z0-9\.]+):?([0-9]*))" # sreach string to break down the turnout systemname
+    grps = re.search (re_str, sysName)
+    
+    if(len(grps.groups()) == 4):
+        signalHeadCmdStr = (grps.groups()[1])
+        host = grps.groups()[2]
+        if (grps.groups()[3] is not None):
+            port = grps.groups()[3]
+            host = host + ":" + port
+
+    print ("Cmd Str: " + signalHeadCmdStr)
+    print ("host: " + host)
+
+    return signalHeadCmdStr, host
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # this is the code to be executed for a new network device
@@ -156,17 +182,25 @@ def TcpPeripheral_sendToSensor(gpio, id):
     return sent
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# this is the code to be executed to send a message to a network device connected to the sensor
+# this is the code to be executed to send a message to a network device connected to the turnout
 def TcpPeripheral_sendToTurnout(sensorAdd, thrownAngle, closedAngle, id, active):
     alias = id.lower()
-    msg = "OUT:" + str(sensorAdd) + "[" + str(thrownAngle) + "][" + str(closedAngle) +  "]:" + ("1" if active else "0")
+    msg = "OUT_TO:" + str(sensorAdd) + "[" + str(thrownAngle) + "][" + str(closedAngle) +  "]:" + ("1" if active else "0")
+    sent = TcpPeripheral_sockets[alias].send(msg)
+    return sent
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# this is the code to be executed to send a message to a network device connected to the signal head
+def TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, apperance):
+    alias = host.lower()
+    msg = "OUT_SH:" + signalHeadCmdStr + ":" + apperance
     sent = TcpPeripheral_sockets[alias].send(msg)
     return sent
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # this is the code to be executed when a valid sensor status is received from a network device
 def TcpPeripheral_receivedFromDevice(alias, gpio, value):
-    sensorSysName = "IS.RPi$" + str(gpio) + ":" + alias.upper()
+    sensorSysName = "IS.RPI$" + str(gpio) + ":" + alias.upper()
     sensor = sensors.getBySystemName(sensorSysName)
     if sensor != None: # sensor exists
         if value:
@@ -380,6 +414,31 @@ class TcpPeripheral_ShutDown(jmri.implementation.AbstractShutDownTask):
         time.sleep(3) # wait 3 seconds for all sockets to close
         return
 
+#================================================================================
+# Listener for Signal Heads
+
+class TcpPeripheral_SignalHead_Listener (java.beans.PropertyChangeListener):
+    def propertyChange(self, event):
+        if (event.propertyName == "Appearance"):
+            oldState = event.source.getAppearanceName(event.oldValue)
+            newState = event.source.getAppearanceName(event.newValue)
+            TcpPeripheral_log.debug("'TcpPeripheral' - SignalHead [" + event.source.userName + "] Apperance has changed from " + oldState + " to " + newState )
+
+            signalHeadCmdStr, host = TcpPeripheral_getSignalHeadInfo(event.source.userName)
+
+            if newState == "Green":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "g") # Green
+            elif newState == "Red":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "r") # Red
+            elif newState == "Flashing Red":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "fr") # Flashing red
+            elif newState == "Flashing Green":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "fg") # Flashing grenn
+            else:
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "d") # Dark
+        return
+
+
 #*********************************************************************************
 
 if globals().get("TcpPeripheral_running") != None: # Script already loaded so exit script
@@ -390,24 +449,65 @@ else: # Continue running script
     TcpPeripheral_sockets = {}
     shutdown.register(TcpPeripheral_ShutDown("TcpPeripheral"))
 
+    #Iterate through all the sensors and add listners to the sensors so when something changes on the model layout, JMRI can be informed
     for sensor in sensors.getNamedBeanSet():
+        # Parse the info from the system name of the sensor
         gpio, id = TcpPeripheral_getSensorGpioId(sensor.getSystemName())
         TcpPeripheral_log.debug("'TcpPeripheral' - Sensor SystemName [" + sensor.getSystemName() + "] GPIO [" + str(gpio) + "] ID [" + str(id) + "]")
         if gpio != None and id != None:
+            # Add the host server to a list of connections
             TcpPeripheral_addDevice(id)
             sensor.setKnownState(jmri.Sensor.INCONSISTENT) # set sensor to inconsistent state (just to detect change to unknown)
-            sensor.addPropertyChangeListener(TcpPeripheral_Sensor_Listener())
+            sensor.addPropertyChangeListener(TcpPeripheral_Sensor_Listener()) # Setup listener for the sensor change handling
             sensor.setKnownState(jmri.Turnout.UNKNOWN) # to force send a register request to device
 
+    # Iterate through all the turnouts and add listners to the turnouts so when something changes on the JMRI layout, command can be sent to RPi
     for turnout in turnouts.getNamedBeanSet():
-        servoAdd, thrownAngle, closedAngle, id = TcpPeripheral_getTurnoutInfo(turnout.getSystemName())
-        TcpPeripheral_log.debug("'TcpPeripheral' - Turnout SystemName [" + turnout.getSystemName() + "] Servo [" + str(servoAdd) + "] ID [" + str(id) + "] Kown State [" + str(turnout.getKnownState()) + "]")
-        if servoAdd != None and id != None: # should be a valid network device and GPIO
-            TcpPeripheral_addDevice(id)
-            currentState = turnout.getCommandedState() # get current turnout state
-            turnout.setCommandedState(jmri.Turnout.UNKNOWN) # set turnout to a state that will permit change detection by listener
-            turnout.addPropertyChangeListener(TcpPeripheral_Turnout_Listener())
-            if currentState == jmri.Turnout.CLOSED:
-                turnout.setCommandedState(jmri.Turnout.CLOSED)
-            if currentState == jmri.Turnout.THROWN:
-                turnout.setCommandedState(jmri.Turnout.THROWN)
+       
+        # Skip over all the turnouts that are part of the virtual turnouts setup with the signal heads
+        if "Virtual" not in turnout.getSystemName():
+             # Parse the info from the system name of the sensor
+            servoAdd, thrownAngle, closedAngle, id = TcpPeripheral_getTurnoutInfo(turnout.getSystemName())
+            
+            TcpPeripheral_log.debug("'TcpPeripheral' - Turnout SystemName [" + turnout.getSystemName() + "] Servo [" + str(servoAdd) + "] ID [" + str(id) + "] Kown State [" + str(turnout.getKnownState()) + "]")
+            if servoAdd != None and id != None: # should be a valid network device and GPIO
+                # Add the host server to a list of connections
+                TcpPeripheral_addDevice(id)
+                currentState = turnout.getCommandedState() # get current turnout state
+                turnout.setCommandedState(jmri.Turnout.UNKNOWN) # set turnout to a state that will permit change detection by listener
+                # Set the listener for the turnout change communicated from JMRI
+                turnout.addPropertyChangeListener(TcpPeripheral_Turnout_Listener())
+                # Apply the changes so it triggers the ncessary changes
+                if currentState == jmri.Turnout.CLOSED:
+                    turnout.setCommandedState(jmri.Turnout.CLOSED)
+                if currentState == jmri.Turnout.THROWN:
+                    turnout.setCommandedState(jmri.Turnout.THROWN)
+
+    # Iterate through the signal heads and add listners so when something changes on the JMRI layout, command can be sent to RPi
+    for signalhead in signals.getNamedBeanSet():
+        # Parse signalhead name to identify the host name and signal command string
+        signalHeadCmdStr, host = TcpPeripheral_getSignalHeadInfo(signalhead.getUserName()) 
+        TcpPeripheral_log.info(" 'TcpPeripheral' - Processing SignalHead " + signalhead.getUserName())
+
+        if (host != None):
+            # Add host if not already present
+            TcpPeripheral_addDevice(host)
+            TcpPeripheral_log.info("'TcpPeripheral' - SignalHead [" + signalhead.getUserName() + "] @ Host: [" + host + "]")
+            # Get the current state of the signal head before initializing the listener
+            #currSignalHeadState = signalhead.getAppearance()
+            # Set the state to "yellow" so we can reinitialize the signal
+            #signalhead.setAppearance(4)  # 4 is the Enum for Yellow
+            # Add listener to the Signal Head
+            signalhead.addPropertyChangeListener(TcpPeripheral_SignalHead_Listener())
+            #Once listeners are added, reset the state so message is sent to the layout
+            #if signalhead.getAppearanceName(currSignalHeadState) == "Dark":
+            #    signalhead.setApperance(0) # 0 is the Enum for Dark
+            #if signalhead.getAppearanceName(currSignalHeadState) == "Red":
+            #    signalhead.setApperance(1) # 1 is the Enum for Red
+            #if signalhead.getAppearanceName(currSignalHeadState) == "Flashing Red":
+            #    signalhead.setApperance(2) # 2 is the Enum for Flashing Red
+            #if signalhead.getAppearanceName(currSignalHeadState) == "Green":
+            #    signalhead.setApperance(16) # 16 is the Enum for Green
+            #if signalhead.getAppearanceName(currSignalHeadState) == "Flashing Green":
+            #    signalhead.setApperance(32) # 32 is the Enum for Flashing Green
+            

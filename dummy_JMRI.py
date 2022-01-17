@@ -77,7 +77,7 @@ class clientTcpThread(threading.Thread):
                 self.sock.sendall(msg.encode()) # send heartbeat
                 heartbeatCtrl = time.time() # restart heartbeat delay
             try:
-                print ("Waiting for messages ... ")
+#                print ("Waiting for messages ... ")
                 received = self.sock.recv(256)
                 received = received.decode()
                 print ("This is what we received: "  + received)
