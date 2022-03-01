@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/roster2array.xsl" type="text/xsl"?>
+<roster-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/roster.xsd">
+  <!--Written by JMRI version 4.24+Re18b309e8 on Sat Feb 05 21:50:24 MST 2022-->
+  <roster>
+    <locomotive id="N_BNSF_4972" fileName="N_BNSF_4972.xml" roadNumber="4972" roadName="BNSF" mfg="Kato" owner="pi" model="GE C44-9W" dccAddress="4972" comment="" developerID="-1" manufacturerID="129" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-02-06T04:49:55.317+0000</dateUpdated>
+      <decoder model="DN163K1C" family="Series 3 with FX3, silent, readback" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="4972" longaddress="yes" />
+        <number>4972</number>
+        <protocol>dcc_long</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+      <attributepairs>
+        <keyvaluepair>
+          <key>LastOperated</key>
+          <value>2022-01-19T19:27:37.203+0000</value>
+        </keyvaluepair>
+        <keyvaluepair>
+          <key>OperatingDuration</key>
+          <value>11</value>
+        </keyvaluepair>
+      </attributepairs>
+    </locomotive>
+    <locomotive id="N_BNSF_5749" fileName="N_BNSF_5977.xml" roadNumber="5749" roadName="BNSF" mfg="Kato" owner="pi" model="GE ES44AC" dccAddress="5749" comment="" developerID="-1" manufacturerID="129" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-02-06T04:50:24.431+0000</dateUpdated>
+      <decoder model="DN163K1C" family="Series 3 with FX3, silent, readback" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="5749" longaddress="yes" />
+        <number>5749</number>
+        <protocol>dcc_long</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+    </locomotive>
+    <locomotive id="N_BNSF_5977" fileName="N_BNSF_59770.xml" roadNumber="5977" roadName="BNSF" mfg="Kato" owner="pi" model="GE ES44AC" dccAddress="5977" comment="" developerID="-1" manufacturerID="129" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-02-06T04:50:24.432+0000</dateUpdated>
+      <decoder model="DN163K1C" family="Series 3 with FX3, silent, readback" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="5977" longaddress="yes" />
+        <number>5977</number>
+        <protocol>dcc_long</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+    </locomotive>
+  </roster>
+</roster-config>

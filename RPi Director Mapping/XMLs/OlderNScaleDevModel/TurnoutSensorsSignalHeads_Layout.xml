@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/panelfile-4-19-2.xsl" type="text/xsl"?>
+<layout-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-4-19-2.xsd">
+  <jmriversion>
+    <major>4</major>
+    <minor>24</minor>
+    <test>0</test>
+    <modifier />
+  </jmriversion>
+  <sensors class="jmri.jmrix.internal.configurexml.InternalSensorManagerXml">
+    <defaultInitialState>unknown</defaultInitialState>
+    <sensor inverted="false">
+      <systemName>IS.RPI$5:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$6:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$16:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$20:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$21:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+  </sensors>
+  <turnouts class="jmri.jmrix.internal.configurexml.InternalTurnoutManagerXml">
+    <operations automate="false">
+      <operation name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml" interval="300" maxtries="2" />
+      <operation name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml" interval="300" maxtries="1" />
+    </operations>
+    <defaultclosedspeed>Normal</defaultclosedspeed>
+    <defaultthrownspeed>Restricted</defaultthrownspeed>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$0[95][87]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$1[94][85]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$2[83][93]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$3[96][88]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$4[86][92]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM1-SH1$G</systemName>
+      <comment>SignalHead:SH1:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM1-SH1$R</systemName>
+      <comment>SignalHead:SH1:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM2-SH1$G</systemName>
+      <comment>SignalHead:IH2:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM2-SH1$R</systemName>
+      <comment>SignalHead:IH2:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM3-SH1$G</systemName>
+      <comment>SignalHead:IH3:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM3-SH1$R</systemName>
+      <comment>SignalHead:IH3:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM4-SH1$G</systemName>
+      <comment>SignalHead:IH4:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM4-SH1$R</systemName>
+      <comment>SignalHead:IH4:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM5-SH1$G</systemName>
+      <comment>SignalHead:IH5:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM5-SH1$R</systemName>
+      <comment>SignalHead:IH5:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHB$G</systemName>
+      <comment>SignalHead:IH7:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHB$R</systemName>
+      <comment>SignalHead:IH7:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHT$G</systemName>
+      <comment>SignalHead:IH6:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHT$R</systemName>
+      <comment>SignalHead:IH6:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHB$G</systemName>
+      <comment>SignalHead:IH11:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHB$R</systemName>
+      <comment>SignalHead:IH11:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHT$G</systemName>
+      <comment>SignalHead:IH10:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHT$R</systemName>
+      <comment>SignalHead:IH10:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHB$G</systemName>
+      <comment>SignalHead:IH9:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHB$R</systemName>
+      <comment>SignalHead:IH9:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHT$G</systemName>
+      <comment>SignalHead:IH8:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHT$R</systemName>
+      <comment>SignalHead:IH8:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHB$G</systemName>
+      <comment>SignalHead:IH14:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHB$R</systemName>
+      <comment>SignalHead:IH14:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHM$G</systemName>
+      <comment>SignalHead:IH13:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHM$R</systemName>
+      <comment>SignalHead:IH13:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHT$G</systemName>
+      <comment>SignalHead:IH12:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHT$R</systemName>
+      <comment>SignalHead:IH12:Red</comment>
+    </turnout>
+  </turnouts>
+  <signalheads class="jmri.managers.configurexml.AbstractSignalHeadManagerXml">
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH1</systemName>
+      <userName>IH.RPI$SM1-SH1$0x24$R6$G14:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH2</systemName>
+      <userName>IH.RPI$SM2-SH1$0x24$R5$G13:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM2-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM2-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH3</systemName>
+      <userName>IH.RPI$SM3-SH1$0x24$R4$G12:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM3-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM3-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH4</systemName>
+      <userName>IH.RPI$SM4-SH1$0x24$R2$G10:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM4-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM4-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH5</systemName>
+      <userName>IH.RPI$SM5-SH1$0x24$R3$G11:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM5-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM5-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH6</systemName>
+      <userName>IH.RPI$SM6-SHT$0x24$R0$G8:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM6-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM6-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH7</systemName>
+      <userName>IH.RPI$SM6-SHB$0x24$R7$G9:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM6-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM6-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH8</systemName>
+      <userName>IH.RPI$SM8-SHT$0x22$R7$G15:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM8-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM8-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH9</systemName>
+      <userName>IH.RPI$SM8-SHB$0x22$R6$G14:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM8-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM8-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH10</systemName>
+      <userName>IH.RPI$SM7-SHT$0x22$R5$G13:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM7-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM7-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH11</systemName>
+      <userName>IH.RPI$SM7-SHB$0x22$R4$G12:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM7-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM7-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH12</systemName>
+      <userName>IH.RPI$SM9-SHT$0x22$R3$G11:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH13</systemName>
+      <userName>IH.RPI$SM9-SHM$0x22$R2$G10:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHM$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHM$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH14</systemName>
+      <userName>IH.RPI$SM9-SHB$0x22$R1$G9:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHB$R</turnoutname>
+    </signalhead>
+  </signalheads>
+  <blocks class="jmri.configurexml.BlockManagerXml">
+    <defaultspeed>Normal</defaultspeed>
+    <block systemName="IB:AUTO:0001">
+      <systemName>IB:AUTO:0001</systemName>
+      <userName>JunctionTrk1</userName>
+    </block>
+    <block systemName="IB:AUTO:0002">
+      <systemName>IB:AUTO:0002</systemName>
+      <userName>JunctionTrk2</userName>
+    </block>
+    <block systemName="IB:AUTO:0003">
+      <systemName>IB:AUTO:0003</systemName>
+      <userName>JunctionTrk3</userName>
+    </block>
+    <block systemName="IB:AUTO:0004">
+      <systemName>IB:AUTO:0004</systemName>
+      <userName>StationATrk</userName>
+    </block>
+    <block systemName="IB:AUTO:0005">
+      <systemName>IB:AUTO:0005</systemName>
+      <userName>StationBTrk</userName>
+    </block>
+    <block systemName="IB:AUTO:0006">
+      <systemName>IB:AUTO:0006</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+    </block>
+    <block systemName="IB:AUTO:0007">
+      <systemName>IB:AUTO:0007</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+    </block>
+    <block systemName="IB:AUTO:0001" length="0.0" curve="0">
+      <systemName>IB:AUTO:0001</systemName>
+      <userName>JunctionTrk1</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0002" length="0.0" curve="0">
+      <systemName>IB:AUTO:0002</systemName>
+      <userName>JunctionTrk2</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0003" length="0.0" curve="0">
+      <systemName>IB:AUTO:0003</systemName>
+      <userName>JunctionTrk3</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0004" length="0.0" curve="0">
+      <systemName>IB:AUTO:0004</systemName>
+      <userName>StationATrk</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0005" length="0.0" curve="0">
+      <systemName>IB:AUTO:0005</systemName>
+      <userName>StationBTrk</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0006" length="0.0" curve="0">
+      <systemName>IB:AUTO:0006</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+      <permissive>no</permissive>
+    </block>
+    <block systemName="IB:AUTO:0007" length="0.0" curve="0">
+      <systemName>IB:AUTO:0007</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+      <permissive>no</permissive>
+    </block>
+  </blocks>
+  <layoutblocks class="jmri.jmrit.display.layoutEditor.configurexml.LayoutBlockManagerXml">
+    <layoutblock systemName="ILB1" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB1</systemName>
+      <userName>JunctionTrk1</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB2" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB2</systemName>
+      <userName>JunctionTrk2</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB3" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB3</systemName>
+      <userName>JunctionTrk3</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB4" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB4</systemName>
+      <userName>StationATrk</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB5" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB5</systemName>
+      <userName>StationBTrk</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB6" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB6</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB7" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB7</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+    </layoutblock>
+  </layoutblocks>
+  <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
+    <logicDelay>500</logicDelay>
+  </signalmastlogics>
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="My Layout" x="215" y="116" windowheight="915" windowwidth="1680" panelheight="317" panelwidth="1157" sliders="no" scrollable="none" editable="yes" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="no">
+    <layoutTrackDrawingOptions name="My Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
+      <mainBallastColor>#000000</mainBallastColor>
+      <mainBallastWidth>0</mainBallastWidth>
+      <mainBlockLineDashPercentageX10>0</mainBlockLineDashPercentageX10>
+      <mainBlockLineWidth>4</mainBlockLineWidth>
+      <mainRailColor>#404040</mainRailColor>
+      <mainRailCount>1</mainRailCount>
+      <mainRailGap>0</mainRailGap>
+      <mainRailWidth>2</mainRailWidth>
+      <mainTieColor>#000000</mainTieColor>
+      <mainTieGap>0</mainTieGap>
+      <mainTieLength>0</mainTieLength>
+      <mainTieWidth>0</mainTieWidth>
+      <sideBallastColor>#000000</sideBallastColor>
+      <sideBallastWidth>0</sideBallastWidth>
+      <sideBlockLineDashPercentageX10>0</sideBlockLineDashPercentageX10>
+      <sideBlockLineWidth>2</sideBlockLineWidth>
+      <sideRailColor>#404040</sideRailColor>
+      <sideRailCount>1</sideRailCount>
+      <sideRailGap>0</sideRailGap>
+      <sideRailWidth>1</sideRailWidth>
+      <sideTieColor>#000000</sideTieColor>
+      <sideTieGap>0</sideTieGap>
+      <sideTieLength>0</sideTieLength>
+      <sideTieWidth>0</sideTieWidth>
+    </layoutTrackDrawingOptions>
+    <sensoricon sensor="IS.RPI$6:PI3BMODELTRAIN:14200" x="1097" y="257" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$5:PI3BMODELTRAIN:14200" x="1097" y="138" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$16:PI3BMODELTRAIN:14200" x="75" y="134" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$20:PI3BMODELTRAIN:14200" x="75" y="195" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$21:PI3BMODELTRAIN:14200" x="77" y="256" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <layoutturnout ident="TO1" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="300.0" ycen="200.0" xa="280.0" ya="200.0" xb="320.0" yb="200.0" xc="329.0" yc="182.0" xd="280.0" yd="200.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$4[86][92]:PI3BMODELTRAIN:14200" connectaname="T9" connectbname="T8" connectcname="T2" />
+    <layoutturnout ident="TO2" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="398.0" ycen="140.0" xa="441.0" ya="140.0" xb="355.0" yb="140.0" xc="374.0" yc="155.0" xd="441.0" yd="140.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" connectaname="T3" connectbname="T1" connectcname="T2" />
+    <layoutturnout ident="TO4" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="698.0" ycen="142.0" xa="678.0" ya="142.0" xb="718.0" yb="142.0" xc="718.0" yc="152.0" xd="678.0" yd="142.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="IT.RPI$2[83][93]:PI3BMODELTRAIN:14200" connectaname="T3" connectbname="T4" connectcname="T7" />
+    <layoutturnout ident="TO5" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="782.0" ycen="204.0" xa="796.1421508789062" ya="218.1421356201172" xb="767.8578491210938" yb="189.8578643798828" xc="757.7868041992188" yc="200.92892456054688" xd="796.1421508789062" yd="218.1421356201172" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$1[94][85]:PI3BMODELTRAIN:14200" connectaname="T6" connectbname="T7" connectcname="T8" />
+    <layoutturnout ident="TO6" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="857.0" ycen="261.0" xa="877.0" ya="261.0" xb="837.0" yb="261.0" xc="837.0" yc="251.0" xd="877.0" yd="261.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="IT.RPI$0[95][87]:PI3BMODELTRAIN:14200" connectaname="T5" connectbname="T10" connectcname="T6" />
+    <tracksegment ident="T1" blockname="JunctionTrk1" connect1name="EB1" type1="POS_POINT" connect2name="TO2" type2="TURNOUT_B" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T2" blockname="JunctionTrk2" connect1name="TO1" type1="TURNOUT_C" connect2name="TO2" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T3" blockname="JunctionTrk1toStationA" connect1name="TO2" type1="TURNOUT_A" connect2name="TO4" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T4" blockname="StationATrk" connect1name="TO4" type1="TURNOUT_B" connect2name="EB5" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T5" blockname="StationBTrk" connect1name="TO6" type1="TURNOUT_A" connect2name="EB4" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T6" blockname="StationBTrk" connect1name="TO6" type1="TURNOUT_C" connect2name="TO5" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T7" blockname="StationBTrk" connect1name="TO5" type1="TURNOUT_B" connect2name="TO4" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T8" blockname="JunctionTrk2toInterchange" connect1name="TO1" type1="TURNOUT_B" connect2name="TO5" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T9" blockname="JunctionTrk2" connect1name="EB2" type1="POS_POINT" connect2name="TO1" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T10" blockname="JunctionTrk3" connect1name="TO6" type1="TURNOUT_B" connect2name="EB3" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <positionablepoint ident="EB1" type="END_BUMPER" x="99.0" y="139.0" connect1name="T1" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB2" type="END_BUMPER" x="99.0" y="199.0" connect1name="T9" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB3" type="END_BUMPER" x="100.0" y="261.0" connect1name="T10" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB4" type="END_BUMPER" x="1091.0" y="262.0" connect1name="T5" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB5" type="END_BUMPER" x="1092.0" y="142.0" connect1name="T4" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+  </LayoutEditor>
+  <filehistory>
+    <operation>
+      <type>app</type>
+      <date>Sun Jan 16 22:51:12 MST 2022</date>
+      <filename>JMRI program</filename>
+    </operation>
+    <operation>
+      <type>Load OK</type>
+      <date>Sun Jan 16 22:51:33 MST 2022</date>
+      <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads_Layout.xml</filename>
+      <filehistory>
+        <operation>
+          <type>app</type>
+          <date>Sun Jan 16 22:29:04 MST 2022</date>
+          <filename>JMRI program</filename>
+        </operation>
+        <operation>
+          <type>Load OK</type>
+          <date>Sun Jan 16 22:29:43 MST 2022</date>
+          <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads_Layout.xml</filename>
+          <filehistory>
+            <operation>
+              <type>app</type>
+              <date>Sun Jan 16 20:08:40 MST 2022</date>
+              <filename>JMRI program</filename>
+            </operation>
+            <operation>
+              <type>Load OK</type>
+              <date>Sun Jan 16 20:08:54 MST 2022</date>
+              <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads_Layout.xml</filename>
+              <filehistory>
+                <operation>
+                  <type>app</type>
+                  <date>Sun Jan 16 14:46:01 MST 2022</date>
+                  <filename>JMRI program</filename>
+                </operation>
+                <operation>
+                  <type>Load OK</type>
+                  <date>Sun Jan 16 14:47:35 MST 2022</date>
+                  <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads.xml</filename>
+                  <filehistory>
+                    <operation>
+                      <type>app</type>
+                      <date>Thu Jan 13 10:54:42 MST 2022</date>
+                      <filename>JMRI program</filename>
+                    </operation>
+                    <operation>
+                      <type>Load OK</type>
+                      <date>Thu Jan 13 10:57:14 MST 2022</date>
+                      <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads.xml</filename>
+                      <filehistory>
+                        <operation>
+                          <type>app</type>
+                          <date>Sat Jan 08 23:26:48 MST 2022</date>
+                          <filename>JMRI program</filename>
+                        </operation>
+                        <operation>
+                          <type>Load OK</type>
+                          <date>Sat Jan 08 23:27:15 MST 2022</date>
+                          <filename>/Users/sreekarkrishna/Library/Preferences/JMRI/My_JMRI_Railroad.jmri/TurnoutSensorsSignalHeads.xml</filename>
+                        </operation>
+                        <operation>
+                          <type>Store</type>
+                          <date>Thu Jan 13 09:50:27 MST 2022</date>
+                          <filename />
+                        </operation>
+                      </filehistory>
+                    </operation>
+                    <operation>
+                      <type>Store</type>
+                      <date>Sun Jan 16 12:45:43 MST 2022</date>
+                      <filename />
+                    </operation>
+                  </filehistory>
+                </operation>
+                <operation>
+                  <type>Store</type>
+                  <date>Sun Jan 16 16:17:14 MST 2022</date>
+                  <filename />
+                </operation>
+              </filehistory>
+            </operation>
+            <operation>
+              <type>Store</type>
+              <date>Sun Jan 16 22:25:19 MST 2022</date>
+              <filename />
+            </operation>
+          </filehistory>
+        </operation>
+        <operation>
+          <type>Store</type>
+          <date>Sun Jan 16 22:46:46 MST 2022</date>
+          <filename />
+        </operation>
+      </filehistory>
+    </operation>
+    <operation>
+      <type>Store</type>
+      <date>Mon Jan 17 20:52:25 MST 2022</date>
+      <filename />
+    </operation>
+  </filehistory>
+  <!--Written by JMRI version 4.24+Re18b309e8 on Mon Jan 17 20:52:25 MST 2022-->
+</layout-config>

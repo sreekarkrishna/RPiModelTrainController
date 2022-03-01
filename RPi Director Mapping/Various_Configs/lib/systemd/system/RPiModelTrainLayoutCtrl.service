@@ -1,0 +1,10 @@
+[Unit]
+ Description=RPi TCP Server to control Model train layout
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/python3 /home/pi/Documents/RPiLayoutControllerV2/bin/RPi_TCPServer_V2.py > /home/pi/Documents/RPiLayoutControllerV2/log/server.log 2>&1
+
+ [Install]
+ WantedBy=multi-user.target

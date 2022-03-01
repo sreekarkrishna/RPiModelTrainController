@@ -1,4 +1,4 @@
-##################################################################################
+"""""
 # Please read JMRI_Script.py first to understand the nature of this code base
 #
 # This code is part of the package for controlling sensors and actuators that are connected to a Raspberry Pi to work with JMRI
@@ -42,7 +42,7 @@
 # https://circuitpython.readthedocs.io/projects/mcp230xx/en/latest/api.html - adafruit_mcp230xx.mcp23017 - Library for controlling MCP23017
 # 
 # Author: Oscar Moutinho (oscar.moutinho@gmail.com), 2016 - for JMRI
-##################################################################################
+"""
 
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # imports, module variables and imediate running code
@@ -73,14 +73,14 @@ blinkingthreadCtrlFlag = {}
 blinkingThreads = {}
 
 
-#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 # this is the code to be executed when an input is activated
 def inputActivated(input):
     msg = "IN:" + str(input.pin.number) + ":1"
     sock.send(msg)
     return
 
-#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 # this is the code to be executed when an input is deactivated
 def inputDeactivated(input):
     msg = "IN:" + str(input.pin.number) + ":0"
@@ -180,7 +180,7 @@ class serverTcpThread_callback(object):
             greenLEDGPIO = None
 
             # Sample incoming command OUT_SH:SM1-SH1$0x24$R6$G14:r
-            re_str = "(OUT_SH:([A-Z0-9\-]+)\$([0-9x]+)\$R([0-9]+)\$G([0-9]+):([r,g,f,d]+))" # sreach string to break down the turnout systemname
+            re_str = "(OUT_SH:([A-Z0-9\-]+)\$([0-9x]+)\$R([0-9]+)\$G([0-9]+):([r,g,f,d,y]+))" # sreach string to break down the turnout systemname
             
             try:
                 grps = re.search (re_str, tempMsg)
@@ -195,9 +195,6 @@ class serverTcpThread_callback(object):
                 redLEDGPIO = int(grps.groups()[3])
                 greenLEDGPIO = int(grps.groups()[4])
                 apperance = grps.groups()[5]
-
-                msg = "Extracted from Regex - MCPBoardAdd: " + str(MCPBoardAdd) + " red gpio: " + str(redLEDGPIO) + " green gpio: " + str(greenLEDGPIO) + " apperance: " + apperance
-                serverTcpThread.send(msg)
             except:
                 msg = str(tempMsg) + ":ERROR - could not parse due to exception in parsing parameters for Signal Head " + signalHeadId
                 serverTcpThread.send(msg)
@@ -233,6 +230,12 @@ class serverTcpThread_callback(object):
                 serverTcpThread.send(msg)
                 return
                 
+            # Apperance mapping - Sometimes we dont have an yellow LED, or some other mapping may not be translatable to the LEDs. 
+            # This section offers the mapping between the apperance and LED colors
+            if apperance == "y":
+                apperance = "fr"
+            elif apperance == "fy":
+                apperance = "fg"
 
             # Send the command to the GPIO
             try:

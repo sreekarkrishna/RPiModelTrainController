@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/panelfile-4-19-2.xsl" type="text/xsl"?>
+<layout-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-4-19-2.xsd">
+  <jmriversion>
+    <major>4</major>
+    <minor>24</minor>
+    <test>0</test>
+    <modifier />
+  </jmriversion>
+  <sensors class="jmri.jmrix.loconet.configurexml.LnSensorManagerXml">
+    <sensor inverted="false">
+      <systemName>LS1</systemName>
+      <userName>BD:JunctionTrk3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS2</systemName>
+      <userName>BD:JunctionTrk2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS3</systemName>
+      <userName>Bd:JunctionTrk1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS4</systemName>
+      <userName>BD:JunctionTrk2toInterchange</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS5</systemName>
+      <userName>BD:JunctionTrk1toStationA</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS6</systemName>
+      <userName>BD:StationBTrk</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS7</systemName>
+      <userName>BD:StationATrk</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>LS8</systemName>
+    </sensor>
+  </sensors>
+  <sensors class="jmri.jmrix.internal.configurexml.InternalSensorManagerXml">
+    <defaultInitialState>unknown</defaultInitialState>
+    <sensor inverted="false">
+      <systemName>IS.RPI$5:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$6:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$16:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$20:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS.RPI$21:PI3BMODELTRAIN:14200</systemName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0001:forward</systemName>
+      <userName>IY:AUTO:0001:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0001:reverse</systemName>
+      <userName>IY:AUTO:0001:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0002:forward</systemName>
+      <userName>IY:AUTO:0002:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0002:reverse</systemName>
+      <userName>IY:AUTO:0002:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0003:forward</systemName>
+      <userName>IY:AUTO:0003:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0003:reverse</systemName>
+      <userName>IY:AUTO:0003:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0004:forward</systemName>
+      <userName>IY:AUTO:0004:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0004:reverse</systemName>
+      <userName>IY:AUTO:0004:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0005:forward</systemName>
+      <userName>IY:AUTO:0005:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0005:reverse</systemName>
+      <userName>IY:AUTO:0005:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0006:forward</systemName>
+      <userName>IY:AUTO:0006:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0006:reverse</systemName>
+      <userName>IY:AUTO:0006:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0007:forward</systemName>
+      <userName>IY:AUTO:0007:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0007:reverse</systemName>
+      <userName>IY:AUTO:0007:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0008:forward</systemName>
+      <userName>IY:AUTO:0008:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0008:reverse</systemName>
+      <userName>IY:AUTO:0008:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0009:forward</systemName>
+      <userName>IY:AUTO:0009:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0009:reverse</systemName>
+      <userName>IY:AUTO:0009:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0013:forward</systemName>
+      <userName>IY:AUTO:0013:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0013:reverse</systemName>
+      <userName>IY:AUTO:0013:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0016:forward</systemName>
+      <userName>IY:AUTO:0016:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0016:reverse</systemName>
+      <userName>IY:AUTO:0016:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0017:forward</systemName>
+      <userName>IY:AUTO:0017:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0017:reverse</systemName>
+      <userName>IY:AUTO:0017:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0020:forward</systemName>
+      <userName>IY:AUTO:0020:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0020:reverse</systemName>
+      <userName>IY:AUTO:0020:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0021:forward</systemName>
+      <userName>IY:AUTO:0021:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0021:reverse</systemName>
+      <userName>IY:AUTO:0021:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0022:forward</systemName>
+      <userName>IY:AUTO:0022:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0022:reverse</systemName>
+      <userName>IY:AUTO:0022:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0023:forward</systemName>
+      <userName>IY:AUTO:0023:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0023:reverse</systemName>
+      <userName>IY:AUTO:0023:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0026:forward</systemName>
+      <userName>IY:AUTO:0026:forward</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS:IY:AUTO:0026:reverse</systemName>
+      <userName>IY:AUTO:0026:reverse</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>ISCLOCKRUNNING</systemName>
+    </sensor>
+  </sensors>
+  <turnouts class="jmri.jmrix.internal.configurexml.InternalTurnoutManagerXml">
+    <operations automate="false">
+      <operation name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml" interval="300" maxtries="2" />
+      <operation name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml" interval="300" maxtries="1" />
+      <operation name="Sensor" class="jmri.configurexml.turnoutoperations.SensorTurnoutOperationXml" interval="300" maxtries="3" />
+    </operations>
+    <defaultclosedspeed>Normal</defaultclosedspeed>
+    <defaultthrownspeed>Restricted</defaultthrownspeed>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$0[95][87]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$1[94][85]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$2[83][93]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$3[96][88]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$4[86][92]:PI3BMODELTRAIN:14200</systemName>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM1-SH1$G</systemName>
+      <comment>SignalHead:SH1:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM1-SH1$R</systemName>
+      <comment>SignalHead:SH1:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM2-SH1$G</systemName>
+      <comment>SignalHead:IH2:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM2-SH1$R</systemName>
+      <comment>SignalHead:IH2:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM3-SH1$G</systemName>
+      <comment>SignalHead:IH3:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM3-SH1$R</systemName>
+      <comment>SignalHead:IH3:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM4-SH1$G</systemName>
+      <comment>SignalHead:IH4:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM4-SH1$R</systemName>
+      <comment>SignalHead:IH4:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM5-SH1$G</systemName>
+      <comment>SignalHead:IH5:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM5-SH1$R</systemName>
+      <comment>SignalHead:IH5:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHB$G</systemName>
+      <comment>SignalHead:IH7:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHB$R</systemName>
+      <comment>SignalHead:IH7:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHT$G</systemName>
+      <comment>SignalHead:IH6:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM6-SHT$R</systemName>
+      <comment>SignalHead:IH6:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHB$G</systemName>
+      <comment>SignalHead:IH11:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHB$R</systemName>
+      <comment>SignalHead:IH11:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHT$G</systemName>
+      <comment>SignalHead:IH10:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM7-SHT$R</systemName>
+      <comment>SignalHead:IH10:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHB$G</systemName>
+      <comment>SignalHead:IH9:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHB$R</systemName>
+      <comment>SignalHead:IH9:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHT$G</systemName>
+      <comment>SignalHead:IH8:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM8-SHT$R</systemName>
+      <comment>SignalHead:IH8:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHB$G</systemName>
+      <comment>SignalHead:IH14:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHB$R</systemName>
+      <comment>SignalHead:IH14:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHM$G</systemName>
+      <comment>SignalHead:IH13:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHM$R</systemName>
+      <comment>SignalHead:IH13:Red</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHT$G</systemName>
+      <comment>SignalHead:IH12:Green</comment>
+    </turnout>
+    <turnout feedback="DIRECT" inverted="false" automate="Off">
+      <systemName>IT.RPI$Virtual$SM9-SHT$R</systemName>
+      <comment>SignalHead:IH12:Red</comment>
+    </turnout>
+  </turnouts>
+  <reporters class="jmri.jmrix.loconet.configurexml.LnReporterManagerXml">
+    <reporter>
+      <systemName>LR1</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR2</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR3</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR4</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR5</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR6</systemName>
+    </reporter>
+    <reporter>
+      <systemName>LR7</systemName>
+    </reporter>
+  </reporters>
+  <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
+    <memory value="12:32 AM">
+      <systemName>IMCURRENTTIME</systemName>
+    </memory>
+    <memory value="1.0">
+      <systemName>IMRATEFACTOR</systemName>
+    </memory>
+  </memories>
+  <signalheads class="jmri.managers.configurexml.AbstractSignalHeadManagerXml">
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH1</systemName>
+      <userName>IH.RPI$SM1-SH1$0x24$R6$G14:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM1-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM1-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH2</systemName>
+      <userName>IH.RPI$SM2-SH1$0x24$R5$G13:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM2-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM2-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH3</systemName>
+      <userName>IH.RPI$SM3-SH1$0x24$R4$G12:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM3-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM3-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH4</systemName>
+      <userName>IH.RPI$SM4-SH1$0x24$R2$G10:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM4-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM4-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH5</systemName>
+      <userName>IH.RPI$SM5-SH1$0x24$R3$G11:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM5-SH1$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM5-SH1$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH6</systemName>
+      <userName>IH.RPI$SM6-SHT$0x24$R0$G8:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM6-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM6-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH7</systemName>
+      <userName>IH.RPI$SM6-SHB$0x24$R7$G9:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM6-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM6-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH8</systemName>
+      <userName>IH.RPI$SM8-SHT$0x22$R7$G15:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM8-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM8-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH9</systemName>
+      <userName>IH.RPI$SM8-SHB$0x22$R6$G14:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM8-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM8-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH10</systemName>
+      <userName>IH.RPI$SM7-SHT$0x22$R5$G13:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM7-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM7-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH11</systemName>
+      <userName>IH.RPI$SM7-SHB$0x22$R4$G12:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM7-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM7-SHB$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH12</systemName>
+      <userName>IH.RPI$SM9-SHT$0x22$R3$G11:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHT$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHT$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH13</systemName>
+      <userName>IH.RPI$SM9-SHM$0x22$R2$G10:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHM$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHM$R</turnoutname>
+    </signalhead>
+    <signalhead class="jmri.implementation.configurexml.DoubleTurnoutSignalHeadXml">
+      <systemName>IH14</systemName>
+      <userName>IH.RPI$SM9-SHB$0x22$R1$G9:PI3BMODELTRAIN:14200</userName>
+      <turnoutname defines="green">IT.RPI$Virtual$SM9-SHB$G</turnoutname>
+      <turnoutname defines="red">IT.RPI$Virtual$SM9-SHB$R</turnoutname>
+    </signalhead>
+  </signalheads>
+  <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml">
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-1-high-abs(IH.RPI$SM1-SH1$0x24$R6$G14:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM1</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-1-high-abs(IH.RPI$SM2-SH1$0x24$R5$G13:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM2</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-1-high-abs(IH.RPI$SM3-SH1$0x24$R4$G12:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM3</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-1-high-abs(IH.RPI$SM4-SH1$0x24$R2$G10:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM4</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-1-high-abs(IH.RPI$SM5-SH1$0x24$R3$G11:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM5</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-2-high-abs(IH.RPI$SM6-SHT$0x24$R0$G8:PI3BMODELTRAIN:14200)(IH.RPI$SM6-SHB$0x24$R7$G9:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM6</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-2-high-abs(IH.RPI$SM7-SHT$0x22$R5$G13:PI3BMODELTRAIN:14200)(IH.RPI$SM7-SHB$0x22$R4$G12:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM7</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-2-high-abs(IH.RPI$SM8-SHT$0x22$R7$G15:PI3BMODELTRAIN:14200)(IH.RPI$SM8-SHB$0x22$R6$G14:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM8</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <signalmast class="jmri.implementation.configurexml.SignalHeadSignalMastXml">
+      <systemName>IF$shsm:AAR-1946:SL-3-high(IH.RPI$SM9-SHT$0x22$R3$G11:PI3BMODELTRAIN:14200)(IH.RPI$SM9-SHM$0x22$R2$G10:PI3BMODELTRAIN:14200)(IH.RPI$SM9-SHB$0x22$R1$G9:PI3BMODELTRAIN:14200)</systemName>
+      <userName>SM9</userName>
+      <unlit allowed="no" />
+    </signalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0006)</systemName>
+      <userName>SM6vr</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0008)</systemName>
+      <userName>SM6vl</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0009)</systemName>
+      <userName>SM5vl</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0010)</systemName>
+      <userName>SM16vr</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0011)</systemName>
+      <userName>SM16vl</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0012)</systemName>
+      <userName>SM20vr</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0013)</systemName>
+      <userName>SM20vl</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0014)</systemName>
+      <userName>SM21vr</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+    <virtualsignalmast class="jmri.implementation.configurexml.VirtualSignalMastXml">
+      <systemName>IF$vsm:AAR-1946:SL-1-high-abs($0015)</systemName>
+      <userName>SM21vl</userName>
+      <unlit allowed="no" />
+    </virtualsignalmast>
+  </signalmasts>
+  <blocks class="jmri.configurexml.BlockManagerXml">
+    <defaultspeed>Normal</defaultspeed>
+    <block systemName="IB:AUTO:0001">
+      <systemName>IB:AUTO:0001</systemName>
+      <userName>JunctionTrk1</userName>
+    </block>
+    <block systemName="IB:AUTO:0002">
+      <systemName>IB:AUTO:0002</systemName>
+      <userName>JunctionTrk2</userName>
+    </block>
+    <block systemName="IB:AUTO:0003">
+      <systemName>IB:AUTO:0003</systemName>
+      <userName>JunctionTrk3</userName>
+    </block>
+    <block systemName="IB:AUTO:0004">
+      <systemName>IB:AUTO:0004</systemName>
+      <userName>StationATrk</userName>
+    </block>
+    <block systemName="IB:AUTO:0005">
+      <systemName>IB:AUTO:0005</systemName>
+      <userName>StationBTrk</userName>
+    </block>
+    <block systemName="IB:AUTO:0006">
+      <systemName>IB:AUTO:0006</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+    </block>
+    <block systemName="IB:AUTO:0007">
+      <systemName>IB:AUTO:0007</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+    </block>
+    <block systemName="IB:AUTO:0008">
+      <systemName>IB:AUTO:0008</systemName>
+      <userName>JunctionTrk2v</userName>
+    </block>
+    <block systemName="IB:AUTO:0009">
+      <systemName>IB:AUTO:0009</systemName>
+      <userName>StationBTrkv</userName>
+    </block>
+    <block systemName="IB:AUTO:0001" length="0.0" curve="0">
+      <systemName>IB:AUTO:0001</systemName>
+      <userName>JunctionTrk1</userName>
+      <permissive>no</permissive>
+      <occupancysensor>Bd:JunctionTrk1</occupancysensor>
+      <reporter systemName="LR1" useCurrent="no" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0008">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IB:AUTO:0002" length="0.0" curve="0">
+      <systemName>IB:AUTO:0002</systemName>
+      <userName>JunctionTrk2</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:JunctionTrk2</occupancysensor>
+      <reporter systemName="LR2" useCurrent="no" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0008" />
+    </block>
+    <block systemName="IB:AUTO:0003" length="0.0" curve="0">
+      <systemName>IB:AUTO:0003</systemName>
+      <userName>JunctionTrk3</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:JunctionTrk3</occupancysensor>
+      <reporter systemName="LR3" useCurrent="no" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0009">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$0[95][87]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IB:AUTO:0004" length="0.0" curve="0">
+      <systemName>IB:AUTO:0004</systemName>
+      <userName>StationATrk</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:StationATrk</occupancysensor>
+      <reporter systemName="LR4" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0009">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$2[83][93]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IB:AUTO:0005" length="0.0" curve="0">
+      <systemName>IB:AUTO:0005</systemName>
+      <userName>StationBTrk</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:StationBTrk</occupancysensor>
+      <reporter systemName="LR5" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0009" />
+    </block>
+    <block systemName="IB:AUTO:0006" length="0.0" curve="0">
+      <systemName>IB:AUTO:0006</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:JunctionTrk1toStationA</occupancysensor>
+      <reporter systemName="LR6" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0008" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0009" />
+    </block>
+    <block systemName="IB:AUTO:0007" length="0.0" curve="0">
+      <systemName>IB:AUTO:0007</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:JunctionTrk2toInterchange</occupancysensor>
+      <reporter systemName="LR7" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0008">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$4[86][92]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IB:AUTO:0009">
+        <beansetting setting="4">
+          <turnout systemName="IT.RPI$1[94][85]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IB:AUTO:0008" length="0.0" curve="0">
+      <systemName>IB:AUTO:0008</systemName>
+      <userName>JunctionTrk2v</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:JunctionTrk2</occupancysensor>
+      <reporter systemName="LR2" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0001">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+      <path todir="128" fromdir="64" block="IB:AUTO:0002" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0006" />
+      <path todir="64" fromdir="128" block="IB:AUTO:0007">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$4[86][92]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IB:AUTO:0009" length="0.0" curve="0">
+      <systemName>IB:AUTO:0009</systemName>
+      <userName>StationBTrkv</userName>
+      <permissive>no</permissive>
+      <occupancysensor>BD:StationBTrk</occupancysensor>
+      <reporter systemName="LR5" useCurrent="no" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0003">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$0[95][87]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IB:AUTO:0004">
+        <beansetting setting="2">
+          <turnout systemName="IT.RPI$2[83][93]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IB:AUTO:0005" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0006" />
+      <path todir="128" fromdir="64" block="IB:AUTO:0007">
+        <beansetting setting="4">
+          <turnout systemName="IT.RPI$1[94][85]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+        <beansetting setting="4">
+          <turnout systemName="IT.RPI$0[95][87]:PI3BMODELTRAIN:14200" />
+        </beansetting>
+      </path>
+    </block>
+  </blocks>
+  <layoutblocks class="jmri.jmrit.display.layoutEditor.configurexml.LayoutBlockManagerXml" blockrouting="yes">
+    <layoutblock systemName="ILB1" occupancysensor="Bd:JunctionTrk1" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB1</systemName>
+      <userName>JunctionTrk1</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB2" occupancysensor="BD:JunctionTrk2" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB2</systemName>
+      <userName>JunctionTrk2</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB3" occupancysensor="BD:JunctionTrk3" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB3</systemName>
+      <userName>JunctionTrk3</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB4" occupancysensor="BD:StationATrk" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB4</systemName>
+      <userName>StationATrk</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB5" occupancysensor="BD:StationBTrk" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB5</systemName>
+      <userName>StationBTrk</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB6" occupancysensor="BD:JunctionTrk1toStationA" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB6</systemName>
+      <userName>JunctionTrk1toStationA</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB7" occupancysensor="BD:JunctionTrk2toInterchange" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB7</systemName>
+      <userName>JunctionTrk2toInterchange</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB8" occupancysensor="BD:JunctionTrk2" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB8</systemName>
+      <userName>JunctionTrk2v</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB9" occupancysensor="BD:StationBTrk" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB9</systemName>
+      <userName>StationBTrkv</userName>
+    </layoutblock>
+  </layoutblocks>
+  <sections class="jmri.configurexml.SectionManagerXml">
+    <section systemName="IY:AUTO:0001" userName="SM1:SM8" creationtype="signalmastlogic" fsensorname="IY:AUTO:0001:forward" rsensorname="IY:AUTO:0001:reverse">
+      <systemName>IY:AUTO:0001</systemName>
+      <userName>SM1:SM8</userName>
+    </section>
+    <section systemName="IY:AUTO:0002" userName="SM2:SM8" creationtype="signalmastlogic" fsensorname="IY:AUTO:0002:forward" rsensorname="IY:AUTO:0002:reverse">
+      <systemName>IY:AUTO:0002</systemName>
+      <userName>SM2:SM8</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM8</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0003" userName="SM3:SM7" creationtype="signalmastlogic" fsensorname="IY:AUTO:0003:forward" rsensorname="IY:AUTO:0003:reverse">
+      <systemName>IY:AUTO:0003</systemName>
+      <userName>SM3:SM7</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM7</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0004" userName="SM4:SM7" creationtype="signalmastlogic" fsensorname="IY:AUTO:0004:forward" rsensorname="IY:AUTO:0004:reverse">
+      <systemName>IY:AUTO:0004</systemName>
+      <userName>SM4:SM7</userName>
+    </section>
+    <section systemName="IY:AUTO:0005" userName="SM5:SM7" creationtype="signalmastlogic" fsensorname="IY:AUTO:0005:forward" rsensorname="IY:AUTO:0005:reverse">
+      <systemName>IY:AUTO:0005</systemName>
+      <userName>SM5:SM7</userName>
+    </section>
+    <section systemName="IY:AUTO:0006" userName="SM6:SM8" creationtype="signalmastlogic" fsensorname="IY:AUTO:0006:forward" rsensorname="IY:AUTO:0006:reverse">
+      <systemName>IY:AUTO:0006</systemName>
+      <userName>SM6:SM8</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM8</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0007" userName="SM6:SM5" creationtype="signalmastlogic" fsensorname="IY:AUTO:0007:forward" rsensorname="IY:AUTO:0007:reverse">
+      <systemName>IY:AUTO:0007</systemName>
+      <userName>SM6:SM5</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM5</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0008" userName="SM9:SM1" creationtype="signalmastlogic" fsensorname="IY:AUTO:0008:forward" rsensorname="IY:AUTO:0008:reverse">
+      <systemName>IY:AUTO:0008</systemName>
+      <userName>SM9:SM1</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM1</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0009" userName="SM9:SM7" creationtype="signalmastlogic" fsensorname="IY:AUTO:0009:forward" rsensorname="IY:AUTO:0009:reverse">
+      <systemName>IY:AUTO:0009</systemName>
+      <userName>SM9:SM7</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM7</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0010" userName="JunctionTrk1" creationtype="userdefined">
+      <systemName>IY:AUTO:0010</systemName>
+      <userName>JunctionTrk1</userName>
+      <blockentry sName="IB:AUTO:0001" order="0" />
+      <entrypoint fromblock="IB:AUTO:0008" toblock="IB:AUTO:0001" direction="8" fixed="no" fromblockdirection="West" />
+    </section>
+    <section systemName="IY:AUTO:0011" userName="JunctionTrk3" creationtype="userdefined">
+      <systemName>IY:AUTO:0011</systemName>
+      <userName>JunctionTrk3</userName>
+      <blockentry sName="IB:AUTO:0003" order="0" />
+      <entrypoint fromblock="IB:AUTO:0009" toblock="IB:AUTO:0003" direction="8" fixed="no" fromblockdirection="West" />
+    </section>
+    <section systemName="IY:AUTO:0012" userName="StationATrk" creationtype="userdefined">
+      <systemName>IY:AUTO:0012</systemName>
+      <userName>StationATrk</userName>
+      <blockentry sName="IB:AUTO:0004" order="0" />
+      <entrypoint fromblock="IB:AUTO:0009" toblock="IB:AUTO:0004" direction="8" fixed="no" fromblockdirection="East" />
+    </section>
+    <section systemName="IY:AUTO:0013" userName="SM1:SM20vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0013:forward" rsensorname="IY:AUTO:0013:reverse">
+      <systemName>IY:AUTO:0013</systemName>
+      <userName>SM1:SM20vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM20vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0016" userName="SM4:SM6vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0016:forward" rsensorname="IY:AUTO:0016:reverse">
+      <systemName>IY:AUTO:0016</systemName>
+      <userName>SM4:SM6vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM6vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0017" userName="SM5:SM6vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0017:forward" rsensorname="IY:AUTO:0017:reverse">
+      <systemName>IY:AUTO:0017</systemName>
+      <userName>SM5:SM6vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM6vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0020" userName="SM7:SM16vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0020:forward" rsensorname="IY:AUTO:0020:reverse">
+      <systemName>IY:AUTO:0020</systemName>
+      <userName>SM7:SM16vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM16vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0021" userName="SM7:SM20vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0021:forward" rsensorname="IY:AUTO:0021:reverse">
+      <systemName>IY:AUTO:0021</systemName>
+      <userName>SM7:SM20vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM20vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0022" userName="SM8:SM5vl" creationtype="signalmastlogic" fsensorname="IY:AUTO:0022:forward" rsensorname="IY:AUTO:0022:reverse">
+      <systemName>IY:AUTO:0022</systemName>
+      <userName>SM8:SM5vl</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM5vl</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0023" userName="SM8:SM6vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0023:forward" rsensorname="IY:AUTO:0023:reverse">
+      <systemName>IY:AUTO:0023</systemName>
+      <userName>SM8:SM6vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM6vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0026" userName="SM9:SM21vr" creationtype="signalmastlogic" fsensorname="IY:AUTO:0026:forward" rsensorname="IY:AUTO:0026:reverse">
+      <systemName>IY:AUTO:0026</systemName>
+      <userName>SM9:SM21vr</userName>
+      <properties>
+        <property>
+          <key>forwardMast</key>
+          <value class="java.lang.String">SM21vr</value>
+        </property>
+        <property>
+          <key>intermediateSection</key>
+          <value class="java.lang.Boolean">false</value>
+        </property>
+      </properties>
+    </section>
+    <section systemName="IY:AUTO:0027" userName="JunctionTrk2" creationtype="userdefined">
+      <systemName>IY:AUTO:0027</systemName>
+      <userName>JunctionTrk2</userName>
+      <blockentry sName="IB:AUTO:0002" order="0" />
+      <entrypoint fromblock="IB:AUTO:0008" toblock="IB:AUTO:0002" direction="8" fixed="no" fromblockdirection="West" />
+    </section>
+    <section systemName="IY:AUTO:0028" userName="StationBTrk" creationtype="userdefined">
+      <systemName>IY:AUTO:0028</systemName>
+      <userName>StationBTrk</userName>
+      <blockentry sName="IB:AUTO:0005" order="0" />
+      <entrypoint fromblock="IB:AUTO:0009" toblock="IB:AUTO:0005" direction="8" fixed="no" fromblockdirection="East" />
+    </section>
+  </sections>
+  <routes class="jmri.managers.configurexml.DefaultRouteManagerXml">
+    <route userName="Junction Track 1 to Station A">
+      <systemName>IOJunctionTrk1toStationA</systemName>
+      <userName>Junction Track 1 to Station A</userName>
+      <routeOutputTurnout systemName="IT.RPI$2[83][93]:PI3BMODELTRAIN:14200" state="CLOSED" />
+      <routeOutputTurnout systemName="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" state="CLOSED" />
+      <routeOutputSensor systemName="IS.RPI$6:PI3BMODELTRAIN:14200" state="INACTIVE" />
+      <routeOutputSensor systemName="IS.RPI$16:PI3BMODELTRAIN:14200" state="INACTIVE" />
+      <routeOutputSensor systemName="BD:JunctionTrk2" state="INACTIVE" />
+      <routeOutputSensor systemName="Bd:JunctionTrk1" state="INACTIVE" />
+      <routeOutputSensor systemName="BD:JunctionTrk1toStationA" state="INACTIVE" />
+      <routeOutputSensor systemName="BD:StationATrk" state="INACTIVE" />
+    </route>
+  </routes>
+  <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
+    <logicDelay>500</logicDelay>
+    <signalmastlogic source="SM1">
+      <sourceSignalMast>SM1</sourceSignalMast>
+      <destinationMast destination="SM20vr">
+        <destinationSignalMast>SM20vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM1:SM20vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM2">
+      <sourceSignalMast>SM2</sourceSignalMast>
+      <destinationMast destination="SM8">
+        <destinationSignalMast>SM8</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM2:SM8</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+        <sensors>
+          <sensor>
+            <sensorName>IS.RPI$5:PI3BMODELTRAIN:14200</sensorName>
+            <sensorState>inActive</sensorState>
+          </sensor>
+          <sensor>
+            <sensorName>IS.RPI$16:PI3BMODELTRAIN:14200</sensorName>
+            <sensorState>inActive</sensorState>
+          </sensor>
+        </sensors>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM3">
+      <sourceSignalMast>SM3</sourceSignalMast>
+      <destinationMast destination="SM7">
+        <destinationSignalMast>SM7</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM3:SM7</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM4">
+      <sourceSignalMast>SM4</sourceSignalMast>
+      <destinationMast destination="SM6vr">
+        <destinationSignalMast>SM6vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM4:SM6vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM5">
+      <sourceSignalMast>SM5</sourceSignalMast>
+      <destinationMast destination="SM7">
+        <destinationSignalMast>SM7</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+      <destinationMast destination="SM6vr">
+        <destinationSignalMast>SM6vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM5:SM6vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM6">
+      <sourceSignalMast>SM6</sourceSignalMast>
+      <destinationMast destination="SM5">
+        <destinationSignalMast>SM5</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM6:SM5</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+        <turnouts>
+          <turnout>
+            <turnoutName>IT.RPI$1[94][85]:PI3BMODELTRAIN:14200</turnoutName>
+            <turnoutState>thrown</turnoutState>
+          </turnout>
+        </turnouts>
+      </destinationMast>
+      <destinationMast destination="SM8">
+        <destinationSignalMast>SM8</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM6:SM8</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM7">
+      <sourceSignalMast>SM7</sourceSignalMast>
+      <destinationMast destination="SM16vr">
+        <destinationSignalMast>SM16vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM7:SM16vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+      <destinationMast destination="SM20vr">
+        <destinationSignalMast>SM20vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM7:SM20vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM8">
+      <sourceSignalMast>SM8</sourceSignalMast>
+      <destinationMast destination="SM6vr">
+        <destinationSignalMast>SM6vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM8:SM6vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+      <destinationMast destination="SM5vl">
+        <destinationSignalMast>SM5vl</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM8:SM5vl</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+    <signalmastlogic source="SM9">
+      <sourceSignalMast>SM9</sourceSignalMast>
+      <destinationMast destination="SM1">
+        <destinationSignalMast>SM1</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM9:SM1</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+      <destinationMast destination="SM7">
+        <destinationSignalMast>SM7</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM9:SM7</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+      <destinationMast destination="SM21vr">
+        <destinationSignalMast>SM21vr</destinationSignalMast>
+        <comment />
+        <enabled>yes</enabled>
+        <allowAutoMaticSignalMastGeneration>no</allowAutoMaticSignalMastGeneration>
+        <useLayoutEditor>yes</useLayoutEditor>
+        <useLayoutEditorTurnouts>yes</useLayoutEditorTurnouts>
+        <useLayoutEditorBlocks>yes</useLayoutEditorBlocks>
+        <associatedSection>SM9:SM21vr</associatedSection>
+        <lockTurnouts>no</lockTurnouts>
+      </destinationMast>
+    </signalmastlogic>
+  </signalmastlogics>
+  <meters class="jmri.managers.configurexml.AbstractMeterManagerXml">
+    <meter>
+      <systemName>LVDCS52(s/n7669)InputCurrent</systemName>
+    </meter>
+    <meter>
+      <systemName>LVDCS52(s/n7669)Voltage</systemName>
+    </meter>
+  </meters>
+  <timebase class="jmri.jmrit.simpleclock.configurexml.SimpleTimebaseXml" time="Thu Nov 25 00:39:38 MST 2021" rate="1.0" startrate="1.0" run="yes" master="yes" sync="no" correct="no" display="no" startstopped="no" startrunning="yes" startsettime="no" startclockoption="0" showbutton="no" startsetrate="yes" />
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="N-Scale First Model Layout" x="127" y="511" windowheight="617" windowwidth="1426" panelheight="344" panelwidth="1421" sliders="no" scrollable="none" editable="yes" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="no">
+    <layoutTrackDrawingOptions name="N-Scale First Model Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
+      <mainBallastColor>#000000</mainBallastColor>
+      <mainBallastWidth>0</mainBallastWidth>
+      <mainBlockLineDashPercentageX10>0</mainBlockLineDashPercentageX10>
+      <mainBlockLineWidth>4</mainBlockLineWidth>
+      <mainRailColor>#404040</mainRailColor>
+      <mainRailCount>1</mainRailCount>
+      <mainRailGap>0</mainRailGap>
+      <mainRailWidth>2</mainRailWidth>
+      <mainTieColor>#000000</mainTieColor>
+      <mainTieGap>0</mainTieGap>
+      <mainTieLength>0</mainTieLength>
+      <mainTieWidth>0</mainTieWidth>
+      <sideBallastColor>#000000</sideBallastColor>
+      <sideBallastWidth>0</sideBallastWidth>
+      <sideBlockLineDashPercentageX10>0</sideBlockLineDashPercentageX10>
+      <sideBlockLineWidth>2</sideBlockLineWidth>
+      <sideRailColor>#404040</sideRailColor>
+      <sideRailCount>1</sideRailCount>
+      <sideRailGap>0</sideRailGap>
+      <sideRailWidth>1</sideRailWidth>
+      <sideTieColor>#000000</sideTieColor>
+      <sideTieGap>0</sideTieGap>
+      <sideTieLength>0</sideTieLength>
+      <sideTieWidth>0</sideTieWidth>
+    </layoutTrackDrawingOptions>
+    <sensoricon sensor="IS.RPI$6:PI3BMODELTRAIN:14200" x="1274" y="257" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$5:PI3BMODELTRAIN:14200" x="1273" y="57" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$16:PI3BMODELTRAIN:14200" x="271" y="55" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$20:PI3BMODELTRAIN:14200" x="277" y="155" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS.RPI$21:PI3BMODELTRAIN:14200" x="277" y="254" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="135" y="55" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Junction Track 1" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="141" y="149" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Junction Track 2" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="139" y="249" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Junction Track 3" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1299" y="54" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Station A" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1308" y="255" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Station B" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <signalmasticon signalmast="SM7" x="589" y="45" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM2" x="467" y="66" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="91" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM6" x="377" y="162" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM1" x="480" y="137" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM8" x="843" y="66" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM3" x="932" y="38" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM5" x="919" y="162" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="89" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM9" x="1119" y="237" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM4" x="1027" y="266" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="91" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <positionablelabel x="387" y="179" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM6" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="490" y="126" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM1" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1122" y="222" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM9" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1033" y="279" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM4" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="922" y="175" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM5" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="592" y="30" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM7" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="469" y="75" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM2" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="940" y="24" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM3" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="851" y="81" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="SM8" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1270" y="239" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="IS6" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="1268" y="34" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="IS5" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="266" y="39" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="IS16" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="269" y="137" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="IS20" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="272" y="235" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="IS21" size="12" style="1" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <signalmasticon signalmast="SM6vr" x="1212" y="267" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="91" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM5vl" x="1208" y="38" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM16vr" x="305" y="35" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM20vr" x="302" y="134" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="SM21vr" x="303" y="235" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <layoutturnout ident="TO1" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="441.0" ycen="158.0" xa="421.0" ya="158.0" xb="461.0" yb="158.0" xc="470.0" yc="140.0" xd="421.0" yd="158.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$4[86][92]:PI3BMODELTRAIN:14200" secondturnoutname="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" blockname="JunctionTrk2v" connectaname="T9" connectbname="T8" connectcname="T2">
+      <signalAMast>SM6</signalAMast>
+      <signalBMast>SM1</signalBMast>
+    </layoutturnout>
+    <layoutturnout ident="TO2" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="549.0" ycen="62.0" xa="584.0" ya="62.0" xb="514.0" yb="62.0" xc="521.0" yc="78.0" xd="584.0" yd="62.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$3[96][88]:PI3BMODELTRAIN:14200" secondturnoutname="IT.RPI$4[86][92]:PI3BMODELTRAIN:14200" blockname="JunctionTrk2v" connectaname="T3" connectbname="T1" connectcname="T2">
+      <signalAMast>SM7</signalAMast>
+      <signalBMast>SM2</signalBMast>
+    </layoutturnout>
+    <layoutturnout ident="TO4" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="907.0" ycen="62.0" xa="887.0" ya="62.0" xb="927.0" yb="62.0" xc="927.0" yc="72.0" xd="887.0" yd="62.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="IT.RPI$2[83][93]:PI3BMODELTRAIN:14200" blockname="StationBTrkv" connectaname="T3" connectbname="T4" connectcname="T7">
+      <signalAMast>SM8</signalAMast>
+      <signalBMast>SM3</signalBMast>
+    </layoutturnout>
+    <layoutturnout ident="TO5" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="989.0" ycen="160.0" xa="1003.1421508789062" ya="174.1421356201172" xb="974.8578491210938" yb="145.8578643798828" xc="964.7868041992188" yc="156.92892456054688" xd="1003.1421508789062" yd="174.1421356201172" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="IT.RPI$1[94][85]:PI3BMODELTRAIN:14200" blockname="StationBTrkv" connectaname="T6" connectbname="T7" connectcname="T8">
+      <signalCMast>SM5</signalCMast>
+    </layoutturnout>
+    <layoutturnout ident="TO6" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="1094.0" ycen="262.0" xa="1114.0" ya="262.0" xb="1074.0" yb="262.0" xc="1074.0" yc="252.0" xd="1114.0" yd="262.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="IT.RPI$0[95][87]:PI3BMODELTRAIN:14200" blockname="StationBTrkv" connectaname="T5" connectbname="T10" connectcname="T6">
+      <signalAMast>SM9</signalAMast>
+      <signalBMast>SM4</signalBMast>
+    </layoutturnout>
+    <tracksegment ident="T1" blockname="JunctionTrk1" connect1name="EB1" type1="POS_POINT" connect2name="TO2" type2="TURNOUT_B" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T2" blockname="JunctionTrk2v" connect1name="TO1" type1="TURNOUT_C" connect2name="TO2" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T3" blockname="JunctionTrk1toStationA" connect1name="TO2" type1="TURNOUT_A" connect2name="TO4" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T4" blockname="StationATrk" connect1name="TO4" type1="TURNOUT_B" connect2name="EB5" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T5" blockname="StationBTrk" connect1name="TO6" type1="TURNOUT_A" connect2name="EB4" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T6" blockname="StationBTrkv" connect1name="TO6" type1="TURNOUT_C" connect2name="TO5" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T7" blockname="StationBTrkv" connect1name="TO5" type1="TURNOUT_B" connect2name="TO4" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T8" blockname="JunctionTrk2toInterchange" connect1name="TO1" type1="TURNOUT_B" connect2name="TO5" type2="TURNOUT_C" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T9" blockname="JunctionTrk2" connect1name="EB2" type1="POS_POINT" connect2name="TO1" type2="TURNOUT_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T10" blockname="JunctionTrk3" connect1name="TO6" type1="TURNOUT_B" connect2name="EB3" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <positionablepoint ident="EB1" type="END_BUMPER" x="300.0" y="60.0" connect1name="T1" westboundsignalmast="SM16vr" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB2" type="END_BUMPER" x="297.0" y="158.0" connect1name="T9" westboundsignalmast="SM20vr" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB3" type="END_BUMPER" x="298.0" y="260.0" connect1name="T10" westboundsignalmast="SM21vr" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB4" type="END_BUMPER" x="1259.0" y="263.0" connect1name="T5" eastboundsignalmast="SM6vr" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+    <positionablepoint ident="EB5" type="END_BUMPER" x="1252.0" y="62.0" connect1name="T4" eastboundsignalmast="SM5vl" class="jmri.jmrit.display.layoutEditor.configurexml.PositionablePointXml" />
+  </LayoutEditor>
+  <filehistory>
+    <operation>
+      <type>app</type>
+      <date>Sat Jan 22 21:58:20 MST 2022</date>
+      <filename>JMRI program</filename>
+    </operation>
+    <operation>
+      <type>Load OK</type>
+      <date>Sat Jan 22 21:58:36 MST 2022</date>
+      <filename>/home/pi/.jmri/NScale_Layout.jmri/CompleteLayoutnTables.xml</filename>
+      <filehistory>
+        <operation>
+          <type>app</type>
+          <date>Fri Jan 21 14:00:32 MST 2022</date>
+          <filename>JMRI program</filename>
+        </operation>
+        <operation>
+          <type>Load OK</type>
+          <date>Fri Jan 21 22:19:45 MST 2022</date>
+          <filename>/home/pi/.jmri/NScale_Layout.jmri/CompleteLayoutnTables.xml</filename>
+          <filehistory>
+            <operation>
+              <type>app</type>
+              <date>Thu Jan 20 14:49:42 MST 2022</date>
+              <filename>JMRI program</filename>
+            </operation>
+            <operation>
+              <type>Load OK</type>
+              <date>Thu Jan 20 14:52:38 MST 2022</date>
+              <filename>/home/pi/.jmri/NScale_Layout.jmri/CompleteLayoutnTables.xml</filename>
+              <filehistory>
+                <operation>
+                  <type>app</type>
+                  <date>Wed Jan 19 14:40:26 MST 2022</date>
+                  <filename>JMRI program</filename>
+                </operation>
+                <operation>
+                  <type>Load OK</type>
+                  <date>Wed Jan 19 14:41:50 MST 2022</date>
+                  <filename>/home/pi/Documents/RPiLayoutControllerV2/TurnoutSensorsSignalHeadsBlocksSignalMast_LayoutFinal.xml</filename>
+                  <filehistory>
+                    <operation>
+                      <type>app</type>
+                      <date>Tue Jan 18 23:13:44 MST 2022</date>
+                      <filename>JMRI program</filename>
+                    </operation>
+                    <operation>
+                      <type>Load OK</type>
+                      <date>Tue Jan 18 23:16:34 MST 2022</date>
+                      <filename>/home/pi/Documents/RPiLayoutControllerV2/TurnoutSensorsSignalHeadsBlocksSignalMast_Layout.xml</filename>
+                      <filehistory>
+                        <operation>
+                          <type>app</type>
+                          <date>Tue Jan 18 19:53:43 MST 2022</date>
+                          <filename>JMRI program</filename>
+                        </operation>
+                        <operation>
+                          <type>Load OK</type>
+                          <date>Tue Jan 18 19:53:56 MST 2022</date>
+                          <filename>/home/pi/.jmri/My_JMRI_Railroad.jmri/BlockDetectors.xml</filename>
+                        </operation>
+                        <operation>
+                          <type>Load OK</type>
+                          <date>Tue Jan 18 19:56:20 MST 2022</date>
+                          <filename>/home/pi/Documents/RPiLayoutControllerV2/TurnoutSensorsSignalHeads_Layout.xml</filename>
+                        </operation>
+                        <operation>
+                          <type>Store</type>
+                          <date>Tue Jan 18 21:44:20 MST 2022</date>
+                          <filename />
+                        </operation>
+                      </filehistory>
+                    </operation>
+                    <operation>
+                      <type>Store</type>
+                      <date>Tue Jan 18 23:50:50 MST 2022</date>
+                      <filename />
+                    </operation>
+                  </filehistory>
+                </operation>
+                <operation>
+                  <type>Store</type>
+                  <date>Wed Jan 19 22:26:23 MST 2022</date>
+                  <filename />
+                </operation>
+              </filehistory>
+            </operation>
+            <operation>
+              <type>Store</type>
+              <date>Fri Jan 21 00:03:19 MST 2022</date>
+              <filename />
+            </operation>
+          </filehistory>
+        </operation>
+        <operation>
+          <type>Store</type>
+          <date>Fri Jan 21 23:14:32 MST 2022</date>
+          <filename />
+        </operation>
+      </filehistory>
+    </operation>
+    <operation>
+      <type>Store</type>
+      <date>Sun Jan 23 00:32:37 MST 2022</date>
+      <filename />
+    </operation>
+  </filehistory>
+  <!--Written by JMRI version 4.24+Re18b309e8 on Sun Jan 23 00:32:37 MST 2022-->
+</layout-config>

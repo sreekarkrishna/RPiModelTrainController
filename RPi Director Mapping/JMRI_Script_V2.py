@@ -1,4 +1,4 @@
-##################################################################################
+"""""
 # This script is part of a package that works together to allow Raspberry Pi to control servos (for turnouts), LEDs (for signals)
 # and Obstacle Avoidance sensors (to sense the end of the track)
 # Start with this script and then read "RPi_TCPServer.py"
@@ -62,7 +62,7 @@
 # located in the JMRI program directory: 'log4j.category.jmri.jmrit.jython.exec=DEBUG'
 #
 # Author: Oscar Moutinho (oscar.moutinho@gmail.com), 2016 - for JMRI
-##################################################################################
+"""
 
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # imports, module variables and imediate running code
@@ -110,7 +110,7 @@ def TcpPeripheral_getTurnoutInfo(sysName):
     re_str = "([A-Za-z.]+\$([0-9]+)\[([0-9]+)\]\[([0-9]+)\]:([A-Z0-9.]+):*([0-9]*))" # sreach string to break down the turnout systemname
     grps = re.search (re_str, sysName)
     
-    if(len(grps.groups()) == 6):
+    if(grps is not None and len(grps.groups()) == 6):
         servoAdd = int(grps.groups()[1])
         thrownAngle = int(grps.groups()[2])
         closedAngle = int(grps.groups()[3])
@@ -125,7 +125,7 @@ def TcpPeripheral_getTurnoutInfo(sysName):
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # get Signal Head info string and host name for the signal control Raspberry Pi
 def TcpPeripheral_getSignalHeadInfo(sysName):
-    signalHeadCmdStr = ""
+    signalHeadCmdStr = None
     host = None
     port = 10000
 
@@ -133,15 +133,15 @@ def TcpPeripheral_getSignalHeadInfo(sysName):
     re_str = "(IH.RPI\$([A-Z0-9\-\$x]+):([A-Z0-9\.]+):?([0-9]*))" # sreach string to break down the turnout systemname
     grps = re.search (re_str, sysName)
     
-    if(len(grps.groups()) == 4):
+    if(grps is not None and len(grps.groups()) == 4):
         signalHeadCmdStr = (grps.groups()[1])
         host = grps.groups()[2]
         if (grps.groups()[3] is not None):
             port = grps.groups()[3]
             host = host + ":" + port
 
-    print ("Cmd Str: " + signalHeadCmdStr)
-    print ("host: " + host)
+    #print ("Cmd Str: " + signalHeadCmdStr)
+    #print ("host: " + host)
 
     return signalHeadCmdStr, host
 
@@ -404,7 +404,15 @@ class TcpPeripheral_ShutDown(jmri.implementation.AbstractShutDownTask):
 
 #---------------------------------------------------------------------------------
 # this is the code to be invoked when the program is shutting down
-    def run(self):
+    def execute(self):
+        for signal in signals.getNamedBeanSet():
+            signal.setAppearance(jmri.SignalHead.DARK)
+
+        for turnout in turnouts.getNamedBeanSet():
+            turnout.setCommandedState(jmri.Turnout.CLOSED)
+
+        time.sleep(3)
+
         auxList = []
         for alias in TcpPeripheral_sockets:
             auxList.append(alias)
@@ -412,7 +420,8 @@ class TcpPeripheral_ShutDown(jmri.implementation.AbstractShutDownTask):
             TcpPeripheral_removeDevice(alias)
         TcpPeripheral_log.info("Shutting down 'TcpPeripheral'.")
         time.sleep(3) # wait 3 seconds for all sockets to close
-        return
+
+        return True
 
 #================================================================================
 # Listener for Signal Heads
@@ -434,6 +443,10 @@ class TcpPeripheral_SignalHead_Listener (java.beans.PropertyChangeListener):
                 TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "fr") # Flashing red
             elif newState == "Flashing Green":
                 TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "fg") # Flashing grenn
+            elif newState == "Yellow":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "y") # Yellow
+            elif newState == "Flashing Yellow":
+                TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "fy") # Flashing yellow
             else:
                 TcpPeripheral_sendToSignalHead(signalHeadCmdStr, host, "d") # Dark
         return
